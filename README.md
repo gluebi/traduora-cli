@@ -9,7 +9,6 @@ In your project create a `.npmrc` file with the following content:
 ```
 @gethenryco:registry=https://gitlab.com/api/v4/packages/npm/
 '//gitlab.com/api/v4/packages/npm/:_authToken'="<REPLACE_WITH_AUTH_TOKEN>"
-
 ```
 
 yarn:
@@ -33,9 +32,9 @@ TRADUORAPROJECTID="<REPLACE_WITH_PROJECT_ID>"
 
 Add the following commands to your `package.json` under the `scripts` section.
 
-`"traduora-cli": "yarn traduora getStats"`
+`"traduora-cli:stats": "yarn traduora getStats"`
 
-`"traduora-cli": "yarn traduora addTerm"`
+`"traduora-cli:addTerm": "yarn traduora addTerm"`
 
 ### Todo
 
