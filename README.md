@@ -36,6 +36,8 @@ Add the following commands to your `package.json` under the `scripts` section.
 
 `"traduora-cli:addTerm": "yarn traduora addTerm"`
 
+You can then run these commands from the `package.json`
+
 ### Todo
 
 Implement remaining traduora API functions.
