@@ -1,5 +1,5 @@
-import logIn, { token } from './login';
-import { baseUrl, projectId } from './setup';
+import logIn, { token } from './login.js';
+import { baseUrl, projectId } from './setup.js';
 import fetch from 'node-fetch'
 import type { Response } from 'node-fetch';
 

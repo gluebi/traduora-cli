@@ -1,8 +1,8 @@
 import fetch from 'node-fetch'
 import prompt from 'prompt'
 import type { Response } from 'node-fetch';
-import logIn, { token } from './login';
-import { baseUrl, projectId } from './setup';
+import logIn, { token } from './login.js';
+import { baseUrl, projectId } from './setup.js';
 
 const addTerm = async (): Promise<void> => {
     await logIn()
