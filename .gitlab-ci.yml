@@ -1,35 +1,38 @@
+image: node:latest
+
 stages:
   - build
   - publish
+
+cache:
+  key: build-cache
+  paths:
+    - node_modules/
+    - dist/
+    - .npmrc
+    - .yarn
+  policy: push
 
 build:
   stage: build
   only:
     - tags
-  cache:
-    key: build-cache
-    paths:
-      - node_modules/
-      - lib/
-      - .npmrc
-    policy: push
-  script:
+  tags:
+    - node
+  before_script:
     - echo "@gethenryco:registry=https://gitlab.com/api/v4/packages/npm/" >> .npmrc
     - echo "'//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken'="${CI_JOB_TOKEN}"" >> .npmrc
-    - docker run -v $(pwd):/app -v /home:/home -w="/app" -u="$(id -u):$(id -g)" -e HOME node:18 yarn install
-    - docker run -v $(pwd):/app -v /home:/home -w="/app" -u="$(id -u):$(id -g)" -e HOME node:18 yarn build
+    - yarn config set cache-folder .yarn
+    - yarn install
+  script:
+    - yarn build
 
 publish:
   stage: publish
   only:
     - tags
-  cache:
-    key: build-cache
-    paths:
-      - node_modules/
-      - lib/
-      - .npmrc
-    policy: pull
+  tags:
+    - node
   script:
-    - docker run -v $(pwd):/app -v /home:/home -w="/app" -u="$(id -u):$(id -g)" -e HOME node:18 yarn version patch -i
-    - docker run -v $(pwd):/app -v /home:/home -w="/app" -u="$(id -u):$(id -g)" -e HOME node:18 yarn publish
+    - yarn version patch -i
+    - yarn publish
