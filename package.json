@@ -1,0 +1,39 @@
+{
+  "name": "traduora-cli",
+  "version": "0.0.1",
+  "description": "Package for talking to the Traduora API via npm scripts",
+  "main": "./dist/tradoura.js",
+  "scripts": {
+    "build": "tsc --outDir ./dist/",
+    "lint:ts": "eslint --ext \".js,.ts\" --ignore-path .gitignore .",
+    "lint:fix": "eslint --ext \".js,.ts\" --ignore-path .gitignore . --fix"
+  },
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "tradoura": "./dist/tradoura.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/gethenryco/tools/traduora-cli.git"
+  },
+  "author": "Oliver Pietsch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/gethenryco/tools/traduora-cli/issues"
+  },
+  "homepage": "https://gitlab.com/gethenryco/tools/traduora-cli#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.13",
+    "@types/node-fetch": "^2.6.2",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "node-fetch": "^3.2.10",
+    "prompt": "^1.3.0",
+    "typescript": "^4.8.2"
+  }
+}
