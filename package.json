@@ -1,12 +1,13 @@
 {
-  "name": "traduora-cli",
-  "version": "0.0.1",
+  "name": "@gethenryco/traduora-cli",
+  "version": "0.0.2",
   "description": "Package for talking to the Traduora API via npm scripts",
   "main": "./dist/tradoura.js",
   "scripts": {
     "build": "tsc --outDir ./dist/",
     "lint:ts": "eslint --ext \".js,.ts\" --ignore-path .gitignore .",
-    "lint:fix": "eslint --ext \".js,.ts\" --ignore-path .gitignore . --fix"
+    "lint:fix": "eslint --ext \".js,.ts\" --ignore-path .gitignore . --fix",
+    "publishToGitLab": "GITLAB_AUTH_TOKEN=$AUTH_TOKEN yarn publish"
   },
   "files": [
     "dist"
@@ -23,6 +24,10 @@
   "bugs": {
     "url": "https://gitlab.com/gethenryco/tools/traduora-cli/issues"
   },
+  "publishConfig": {
+    "registry": "https://gitlab.com/api/v4/projects/38902733/packages/npm/"
+  },
+  "type": "module",
   "homepage": "https://gitlab.com/gethenryco/tools/traduora-cli#readme",
   "devDependencies": {
     "@types/node": "^18.7.13",
