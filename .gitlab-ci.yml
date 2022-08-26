@@ -17,8 +17,6 @@ build:
   stage: build
   only:
     - tags
-  tags:
-    - node
   before_script:
     - echo "@gethenryco:registry=https://gitlab.com/api/v4/packages/npm/" >> .npmrc
     - echo "'//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken'="${CI_JOB_TOKEN}"" >> .npmrc
@@ -31,8 +29,6 @@ publish:
   stage: publish
   only:
     - tags
-  tags:
-    - node
   script:
     - yarn version patch -i
     - yarn publish
