@@ -1,8 +1,8 @@
 {
   "name": "@gethenryco/traduora-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Package for talking to the Traduora API via npm scripts",
-  "main": "./dist/tradoura.js",
+  "main": "./dist/traduora.js",
   "scripts": {
     "build": "tsc --outDir ./dist/",
     "lint:ts": "eslint --ext \".js,.ts\" --ignore-path .gitignore .",
@@ -13,7 +13,7 @@
     "dist"
   ],
   "bin": {
-    "tradoura": "./dist/tradoura.js"
+    "traduora": "./dist/traduora.js"
   },
   "repository": {
     "type": "git",
