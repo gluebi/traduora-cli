@@ -1,5 +1,5 @@
 {
-  "name": "@gethenryco/traduora-cli",
+  "name": "traduora-cli",
   "version": "0.0.1",
   "description": "Package for talking to the Traduora API via npm scripts",
   "main": "./dist/traduora.js",
@@ -17,18 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/gethenryco/tools/traduora-cli.git"
+    "url": "git+ssh://git@github.com:gluebi/traduora-cli.git"
   },
   "author": "Oliver Pietsch",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/gethenryco/tools/traduora-cli/issues"
-  },
-  "publishConfig": {
-    "registry": "https://gitlab.com/api/v4/projects/38902733/packages/npm/"
+    "url": "https://github.com/gluebi/traduora-cli/issues"
   },
   "type": "module",
-  "homepage": "https://gitlab.com/gethenryco/tools/traduora-cli#readme",
+  "homepage": "https://github.com/gluebi/traduora-cli#readme",
   "devDependencies": {
     "@types/node": "^18.7.13",
     "@types/node-fetch": "^2.6.2",
