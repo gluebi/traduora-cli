@@ -1,6 +1,6 @@
 {
   "name": "traduora-cli-as-package",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Package for talking to the Traduora API via npm scripts",
   "main": "./dist/traduora.js",
   "scripts": {
