@@ -3,14 +3,6 @@
 
 ### Installation
 
-On gitlab go to Project Settings > Repository > Deploy Tokens and create a new token with `read_package_registry` permission
-In your project create a `.npmrc` file with the following content:
-
-```
-@gethenryco:registry=https://gitlab.com/api/v4/packages/npm/
-'//gitlab.com/api/v4/packages/npm/:_authToken'="<REPLACE_WITH_AUTH_TOKEN>"
-```
-
 yarn:
 `yarn add -D PACKAGE_NAME`
 
