@@ -1,7 +1,7 @@
-import logIn, { token } from './login.js';
-import { baseUrl } from './setup.js';
+import logIn, { token } from './login.js'
+import { baseUrl } from './setup.js'
 import fetch from 'node-fetch'
-import type { Response } from 'node-fetch';
+import type { Response } from 'node-fetch'
 
 const getStats = async (projectId: string): Promise<void> => {
     await logIn()

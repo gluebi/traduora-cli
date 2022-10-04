@@ -1,10 +1,11 @@
 import logIn, { token } from './login.js'
 import { baseUrl } from './setup.js'
-import fetch, { FormData, fileFromSync } from 'node-fetch'
+import fetch from 'node-fetch'
 import type { Response } from 'node-fetch'
 import inquirer from 'inquirer'
+import * as fs from 'fs'
 
-const uploadJSONFile = async (projectId: string): Promise<void> => {
+const importJSONFile = async (projectId: string): Promise<void> => {
     await logIn()
 
     console.log('Add locale:')
@@ -18,34 +19,32 @@ const uploadJSONFile = async (projectId: string): Promise<void> => {
         {
             type: 'input',
             name: 'path',
-            message: 'Please enter the path to the json file relative to project root:',
+            message: 'Please enter the path where the json file should be saved relative to project root:',
         },
     ])
-
-    const file = fileFromSync(prompts.path, 'application/json')
-    const formData = new FormData()
-    formData.set('file', file, 'input.json')
 
     const params = new URLSearchParams({
         locale: prompts.locale,
         format: 'jsonflat',
     })
 
-    const url = `${baseUrl}/api/v1/projects/${projectId}/imports?${params}`
+    const url = `${baseUrl}/api/v1/projects/${projectId}/exports?${params}`
 
     const response: Response = await fetch(url, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
         },
-        body: formData
     })
     const responseBody = await response.json() as { data: { id: string }; error: { code: string; message: string } }
+
+    fs.writeFileSync(prompts.path, JSON.stringify(responseBody))
+
     if (response.ok) {
-        console.log('Json file successfully exported to traduora!')
+        console.log('Json file successfully imported!')
     } else {
         console.log(responseBody.error.message)
     }
 }
 
-export default uploadJSONFile
+export default importJSONFile

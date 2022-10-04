@@ -19,7 +19,7 @@ Create an `.env` file with the following:
 TRADUORACLIENTID="<REPLACE_WITH_CLIENT_ID>"
 TRADUORACLIENTSECRET="<REPLACE_WITH_CLIENT_SECRET>"
 TRADUORABASEURL="<REPLACE_WITH_BASE_URL>"
-TRADUORAPROJECTID="<REPLACE_WITH_PROJECT_ID>"
+TRADUORAPROJECTS='[{"<REPLACE_WITH_PROJECT_ID>","name":"<REPLACE_WITH_PROJECT_NAME>"}]'
 ```
 
 Add the following commands to your `package.json` under the `scripts` section.
@@ -27,6 +27,12 @@ Add the following commands to your `package.json` under the `scripts` section.
 `"traduora-cli:stats": "yarn traduora getStats"`
 
 `"traduora-cli:addTerm": "yarn traduora addTerm"`
+
+`"traduora-cli:addLocale": "yarn traduora addLocale"`
+
+`"traduora-cli:uploadJSONFile": "yarn traduora uploadJSONFile"`
+
+`"traduora-cli:importJSONFile": "yarn traduora importJSONFile"`
 
 You can then run these commands from the `package.json`
 

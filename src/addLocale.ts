@@ -1,8 +1,8 @@
-import logIn, { token } from './login.js';
-import { baseUrl } from './setup.js';
+import logIn, { token } from './login.js'
+import { baseUrl } from './setup.js'
 import fetch from 'node-fetch'
-import type { Response } from 'node-fetch';
-import inquirer from 'inquirer';
+import type { Response } from 'node-fetch'
+import inquirer from 'inquirer'
 
 const addLocale = async (projectId: string): Promise<void> => {
     await logIn()

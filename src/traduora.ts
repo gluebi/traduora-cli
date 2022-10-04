@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-import addTerm from './addTerm.js';
-import getStats from './getStats.js';
-import chooseProject from './projectChooser.js';
-import addLocale from './addLocale.js';
-import uploadJSONFile from './uploadJSONFile.js';
+import addTerm from './addTerm.js'
+import getStats from './getStats.js'
+import chooseProject from './projectChooser.js'
+import addLocale from './addLocale.js'
+import uploadJSONFile from './uploadJSONFile.js'
+import importJSONFile from './importJSONFile.js'
 
 const taskSwitch = async (): Promise<void> => {
   const [...args] = process.argv
@@ -26,6 +27,9 @@ const taskSwitch = async (): Promise<void> => {
       break
     case 'uploadJSONFile':
       await uploadJSONFile(projectId)
+      break
+    case 'importJSONFile':
+      await importJSONFile(projectId)
       break
     default:
       console.log(args[0], 'is not a valid command!')

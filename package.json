@@ -10,7 +10,8 @@
     "addTerm": "node ./dist/traduora.js addTerm",
     "addLocale": "node ./dist/traduora.js addLocale",
     "getStats": "node ./dist/traduora.js getStats",
-    "uploadJSONFile": "node ./dist/traduora.js uploadJSONFile"
+    "uploadJSONFile": "node ./dist/traduora.js uploadJSONFile",
+    "importJSONFile": "node ./dist/traduora.js importJSONFile"
   },
   "files": [
     "dist"

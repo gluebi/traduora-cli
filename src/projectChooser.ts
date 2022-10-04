@@ -1,4 +1,4 @@
-import { projects } from './setup.js';
+import { projects } from './setup.js'
 import inquirer from 'inquirer'
 
 const chooseProject = async (): Promise<string | undefined> => {

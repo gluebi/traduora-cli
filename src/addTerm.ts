@@ -1,8 +1,8 @@
 import fetch from 'node-fetch'
-import type { Response } from 'node-fetch';
-import logIn, { token } from './login.js';
-import { baseUrl } from './setup.js';
-import inquirer from 'inquirer';
+import type { Response } from 'node-fetch'
+import logIn, { token } from './login.js'
+import { baseUrl } from './setup.js'
+import inquirer from 'inquirer'
 
 const addTerm = async (projectId: string): Promise<void> => {
     await logIn()
