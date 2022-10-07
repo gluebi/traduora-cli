@@ -1,9 +1,9 @@
-import { baseUrl, clientSecret, clientId } from './setup.js'
+import { baseUrl } from './setup.js'
 import fetch from 'node-fetch'
 import type { Response } from 'node-fetch'
 export let token: string
 
-const logIn = async (): Promise<void> => {
+const logIn = async (clientId: string, clientSecret: string): Promise<void> => {
     console.log('Logging in...')
     const response: Response = await fetch(`${baseUrl}/api/v1/auth/token`, {
         method: 'POST',

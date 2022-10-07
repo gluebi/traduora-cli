@@ -6,30 +6,32 @@ import chooseProject from './projectChooser.js'
 import addLocale from './addLocale.js'
 import uploadJSONFile from './uploadJSONFile.js'
 import importJSONFile from './importJSONFile.js'
+import logIn from './login.js';
 
 const taskSwitch = async (): Promise<void> => {
   const [...args] = process.argv
   console.log('Starting traduora-cli...')
-  const projectId = await chooseProject()
-  if (!projectId) {
+  const project = await chooseProject()
+  if (!project) {
     console.log('Invalid project ID!')
     return
   }
+  await logIn(project.clientId, project.clientSecret)
   switch (args[2]) {
     case 'addTerm':
-      await addTerm(projectId)
+      await addTerm(project.id)
       break
     case 'getStats':
-      await getStats(projectId)
+      await getStats(project.id)
       break
     case 'addLocale':
-      await addLocale(projectId)
+      await addLocale(project.id)
       break
     case 'uploadJSONFile':
-      await uploadJSONFile(projectId)
+      await uploadJSONFile(project.id)
       break
     case 'importJSONFile':
-      await importJSONFile(projectId)
+      await importJSONFile(project.id)
       break
     default:
       console.log(args[0], 'is not a valid command!')

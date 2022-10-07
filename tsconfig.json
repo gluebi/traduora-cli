@@ -102,7 +102,6 @@
   },
   "include": [
     ".eslintrc.js",
-    "prompt.d.ts",
     "src"
   ]
 }

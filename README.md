@@ -16,10 +16,8 @@ Also get the project ID from the URL.
 
 Create an `.env` file with the following:
 ```
-TRADUORACLIENTID="<REPLACE_WITH_CLIENT_ID>"
-TRADUORACLIENTSECRET="<REPLACE_WITH_CLIENT_SECRET>"
 TRADUORABASEURL="<REPLACE_WITH_BASE_URL>"
-TRADUORAPROJECTS='[{"<REPLACE_WITH_PROJECT_ID>","name":"<REPLACE_WITH_PROJECT_NAME>"}]'
+TRADUORAPROJECTS='[{"<REPLACE_WITH_PROJECT_ID>","name":"<REPLACE_WITH_PROJECT_NAME>","clientId":"<REPLACE_WITH_CLIENT_ID>","clientSecret":"<REPLACE_WITH_CLIENT_SECRET"}]'
 ```
 
 Add the following commands to your `package.json` under the `scripts` section.

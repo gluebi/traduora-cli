@@ -1,8 +1,8 @@
 import { projects } from './setup.js'
 import inquirer from 'inquirer'
 
-const chooseProject = async (): Promise<string | undefined> => {
-    const parsedProjects: Array<{ id: string; name: string }> = JSON.parse(projects as string)
+const chooseProject = async (): Promise<{ id: string; name: string; clientId: string; clientSecret: string } | undefined> => {
+    const parsedProjects: Array<{ id: string; name: string; clientId: string; clientSecret: string }> = JSON.parse(projects as string)
 
     const result = await inquirer.prompt([
         {
@@ -13,7 +13,7 @@ const chooseProject = async (): Promise<string | undefined> => {
         },
     ])
 
-    return parsedProjects.find((project) => project.name === result.name)?.id
+    return parsedProjects.find((project) => project.name === result.name)
 }
 
 export default chooseProject
