@@ -1,3 +1,5 @@
+# This repo is archived and will not receive updates
+
 # traduora-cli
 ## A package for talking to the Traduora API via npm scripts
 
